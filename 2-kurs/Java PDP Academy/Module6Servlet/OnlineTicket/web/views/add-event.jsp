@@ -13,7 +13,7 @@
     <div class="nav-container">
         <div class="nav-left">
             <a href="${pageContext.request.contextPath}/organizer" class="btn">Back</a>
-            <a href="show-events-link.html" class="btn">Show Events</a>
+            <a href="${pageContext.request.contextPath}/events/show-events" class="btn">Show Events</a>
         </div>
         <div class="nav-right">
             <button class="balance-btn" onclick="showBalancePopup()">Balance: $<span id="balanceDisplay">500</span>

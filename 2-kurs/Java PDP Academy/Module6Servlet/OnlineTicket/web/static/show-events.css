@@ -18,48 +18,69 @@ body, html {
 
 /* Navigation Bar */
 nav {
-    background-color: #333;
+    background-color: #007bff;
     color: white;
-    padding: 10px 0;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    padding: 15px 30px;
 }
 
 .nav-container {
-    width: 80%;
-    margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.nav-left .btn,
-.nav-right .btn {
-    margin-left: 20px;
-    padding: 10px 20px;
-    color: white;
-    background-color: #444;
+.nav-buttons-left, .nav-buttons-right {
+    display: flex;
+    align-items: center;
+}
+
+.nav-btn {
+    background-color: white;
+    color: #007bff;
     border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    margin-right: 15px;
+}
+
+.nav-btn:hover {
+    background-color: #e0e0e0;
+}
+
+.balance-btn {
+    background-color: white;
+    color: #007bff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    margin-right: 15px;
+}
+
+.balance-btn:hover {
+    background-color: #e0e0e0;
+}
+
+.logout-btn {
+    background-color: #dc3545;
+    color: white;
+    padding: 10px 20px;
     border-radius: 5px;
     text-decoration: none;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.nav-left .btn:hover,
-.nav-right .btn:hover {
-    background-color: #555;
-}
-
-.balance {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: bold;
 }
 
-
-.container {
-    width: 80%;
-    margin: 0 auto;
+.logout-btn:hover {
+    background-color: #c82333;
 }
+
 
 .events-grid {
     display: flex;

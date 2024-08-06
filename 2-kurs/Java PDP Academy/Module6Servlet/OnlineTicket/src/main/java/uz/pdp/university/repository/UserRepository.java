@@ -6,7 +6,10 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 import uz.pdp.university.DTO.SignInDTO;
 import uz.pdp.university.DTO.SignUpDTO;
+import uz.pdp.university.entity.EventEntity;
 import uz.pdp.university.entity.UserEntity;
+
+import java.util.UUID;
 
 @Repository
 public class UserRepository {
@@ -24,5 +27,9 @@ public class UserRepository {
     public UserEntity signUp(UserEntity userEntity) {
         entityManager.persist(userEntity);
         return userEntity;
+    }
+
+    public UserEntity findById(UUID userId) {
+        return entityManager.find(UserEntity.class, userId);
     }
 }

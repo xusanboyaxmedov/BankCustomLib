@@ -31,10 +31,10 @@
     <div class="nav-container">
         <div class="nav-left">
             <a href="${pageContext.request.contextPath}/events/add-event" class="btn">Back</a>
-            <a href="organizer.jsp" class="btn">Main Menu</a>
+            <a href="${pageContext.request.contextPath}/organizer" class="btn">Main Menu</a>
         </div>
         <div class="nav-right">
-            <span class="balance">Balance: $<span id="balance">1000</span></span>
+            <span class="balance">Balance: $<span id="balance">500</span></span>
         </div>
     </div>
 </nav>
