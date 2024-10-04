@@ -1,0 +1,70 @@
+plugins {
+    id 'java'
+}
+
+group = 'uz.pdp'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
+
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            from components.java
+
+            pom {
+                name = 'Bank System Library'
+                description = 'this is core for our bank system project. It contains all the core logic and entities'
+                url = 'https://github.com/xusanboyaxmedov/book-system-library'
+
+                licenses {
+                    license {
+                        name = 'The Apache License, Version 2.0'
+                        url = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                    }
+                }
+                developers {
+                    developer {
+                        id = 'xusanboyaxmedov'
+                        name = 'Xusanboy Axmedov'
+                        email = 'xusanboyaxmedov2004@gmail.com'
+                    }
+                }
+                scm {
+                    connection = 'scm:git:git://github.com/xusanboyaxmedov/bank-system-core.git'
+                    developerConnection = 'scm:git:ssh://github.com/your-repo-url.git'
+                    url = 'https://github.com/xusanboyaxmedov/bank-system-core'
+                }
+            }
+        }
+    }
+    repositories {
+        maven {
+            name = "GitHubPackages"
+            url = uri("https://maven.pkg.github.com/xusanboyaxmedov/bank-system-library")
+            credentials {
+                username = project.findProperty("gpr.user") ?: System.getenv("USERNAME")
+                password = project.findProperty("gpr.token") ?: System.getenv("TOKEN")
+            }
+        }
+    }
+}
+
+
+dependencies {
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+}
+
+test {
+    useJUnitPlatform()
+}
